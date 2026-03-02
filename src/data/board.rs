@@ -742,7 +742,7 @@ impl Board {
         self.cover1_queries.coverings1()
     }
 
-    pub fn coverings2(&self) -> Ref<Vec<(E2, E2)>> {
+    pub fn coverings2(&self) -> Ref<'_, Vec<(E2, E2)>> {
         assert!(!self.in_transaction());
 
         if self.coverings2.borrow().is_none() {
@@ -755,7 +755,7 @@ impl Board {
         self.cover2_queries_symmetric().coverings2()
     }
 
-    pub fn other_coverings(&self) -> Ref<Vec<Vec<E2>>> {
+    pub fn other_coverings(&self) -> Ref<'_, Vec<Vec<E2>>> {
         self.maybe_update_other_coverings();
         Ref::map(self.other_coverings.borrow(), |oc| oc.as_ref().unwrap())
     }
