@@ -51,3 +51,12 @@ You can also append the following optional arguments to customize the search:
 *   `--no-change-side`: Restricts the search space size. If no valid polyomino is found within the `N` $\times$ `N` bounding box, the program will terminate instead of automatically attempting larger sizes.
 *   `--nproc <X>`: Speeds up the search by running `X` independent simulated annealing processes in parallel using multiple CPU cores (defaults to 16).
 
+
+## Hardness Gadget Search Artifacts
+
+Additional code used for the NP-hardness gadget search/verification is stored in `hardness/`.
+
+- `hardness/rust_search/`: Rust + Rayon search implementation.
+- `hardness/search_hardness_gadget.py`: Python exploratory search script.
+- `hardness/verify_rust_candidates.py`: independent Python verifier for Rust outputs.
+- `hardness/README.md`: usage notes for this directory.
